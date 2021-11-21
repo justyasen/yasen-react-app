@@ -1,17 +1,59 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+//ARROW FUNCTIONS
+//simple array
+const jobs = [
+    { id: 1, isActive: true },
+    { id: 2, isActive: true },
+    { id: 3, isActive: false}
+];
+//This is the equivalent of calling a function inside of filter() and returning a reference to the object, but this is much faster and cleaner
+const activeJobs = jobs.filter(job => job.isActive); 
+console.log(activeJobs); 
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+//MAPS
+const colors = [ 'red', 'blue', 'green' ]; 
+//A good use of the arrow function is when you have one line of code inside the function and it returns something
+//const items = colors.map(color => ' <li> ' + color + ' </li> ');  //this can be made even cleaner by using template literals with ES6:
+const items = colors.map(color => `<li> ${color} </li> `) // the ${} is the placeholder in the template. 
+console.log(items); 
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+//OBJECT DESTRUCTURING
+const address = {
+    street: ' ',
+    city: ' ',
+    country: ' ', 
+}
+//values can be stored like this:
+/*
+const street = address.street;
+const city = address.city;
+const country = address.country; 
+*/
+//but this is faster and way less repetative
+const { street, city, country } = address; 
+
+//SPREAD OPERATOR - ...
+
+//This is the old way of doing things
+const firstArray = [1, 2, 3];
+const secondArray = [4, 5, 6]; 
+
+const combined = firstArray.concat(secondArray); 
+
+//the spread operator is ...
+const combinedArray = [...firstArray, ...secondArray]; 
+//you can easily clone objects, arrays just by spreading them
+const clone = [...firstArray]; 
+//you can easily add new items to the object
+const addDetailToAddress = {...street, ...city, ...country, nearestRestaurant: "McDonalds"}; 
+
+//Classes
+class Person{
+    constructor(name){
+        this.name = name; 
+    }
+
+    walk(){
+        console.log(" walking "); 
+    }
+};
+
