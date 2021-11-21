@@ -1,3 +1,7 @@
+import { Person } from "./person";
+import { Driver } from "./driver";
+
+
 //ARROW FUNCTIONS
 //simple array
 const jobs = [
@@ -46,14 +50,12 @@ const clone = [...firstArray];
 //you can easily add new items to the object
 const addDetailToAddress = {...street, ...city, ...country, nearestRestaurant: "McDonalds"}; 
 
-//Classes
-class Person{
-    constructor(name){
-        this.name = name; 
-    }
+//CLASSES
 
-    walk(){
-        console.log(" walking "); 
-    }
-};
+//inheritance
+const driver = new Driver("Hamilton");
 
+//MODULES
+/* Modularity is used to make files less "bloated" and make code easier to integrate and be more scaleable */ 
+/* Therefore I have moved the classes into different files. */ 
+ 
