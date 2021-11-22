@@ -1,6 +1,8 @@
+//Named imports are done like this:
 import { Person } from "./person";
 import { Driver } from "./driver";
-
+//Default imports are done like this:
+import Person from "./person"; 
 
 //ARROW FUNCTIONS
 //simple array
